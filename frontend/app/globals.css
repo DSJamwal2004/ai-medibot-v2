@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --surface: #0f1117;
+  --surface-raised: #161b27;
+  --surface-border: #1e2535;
+  --surface-muted: #252d3d;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --brand: #3b82f6;
+  --brand-glow: #60a5fa;
+  --risk-low: #22c55e;
+  --risk-medium: #f59e0b;
+  --risk-high: #ef4444;
+  --risk-emergency: #dc2626;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: var(--surface);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--surface-muted); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #3b4a5e; }
+
+/* Markdown in chat */
+.prose-chat p { margin: 0 0 0.5rem; }
+.prose-chat p:last-child { margin-bottom: 0; }
+.prose-chat strong { color: #e2e8f0; font-weight: 600; }
+.prose-chat ul { list-style: disc; padding-left: 1.25rem; margin: 0.25rem 0; }
+.prose-chat li { margin: 0.2rem 0; }
+.prose-chat hr { border-color: var(--surface-border); margin: 0.75rem 0; }
+
+/* Typing dots animation */
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+}
+.dot-1 { animation: blink 1.4s infinite 0s; }
+.dot-2 { animation: blink 1.4s infinite 0.2s; }
+.dot-3 { animation: blink 1.4s infinite 0.4s; }
+
+/* Fade-up entry */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fadeUp 0.3s ease forwards; }
+
+/* Confidence bar fill animation */
+@keyframes fillBar {
+  from { width: 0; }
+}
+.animate-fill { animation: fillBar 0.6s ease forwards; }
+
+/* Glow pulse for emergency */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.3); }
+  50% { box-shadow: 0 0 0 6px rgba(220, 38, 38, 0); }
+}
+.glow-emergency { animation: glowPulse 2s ease infinite; }
