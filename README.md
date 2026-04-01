@@ -18,10 +18,9 @@ A full-stack AI medical assistant built with a **structured 8-step reasoning pip
 
 ## 🚀 Demo
 
-> ⚠️ Add screenshots here before pushing
-
 ```md
 ![Chat UI](./assets/chat.png)
+
 ```
 
 ---
