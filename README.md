@@ -16,7 +16,6 @@ A full-stack AI medical assistant built with a **structured 8-step reasoning pip
 
 ---
 
-md
 ## 🚀 Demo
 
 ### 🖥️ Chat Interface
